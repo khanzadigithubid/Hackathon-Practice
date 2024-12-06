@@ -1,5 +1,5 @@
 import Image from "next/image"
-const PageIntro = ({ children, intro, text, nav }: { children?: React.ReactNode, intro: string, text?: string, nav?: string }) => {
+const PageIntro = ({ children, intro, text, nav, isTime = true }: { children?: React.ReactNode, intro: string, text?: string, nav?: string, isTime?: boolean, }) => {
     return (
         <div className="w-full pt-12">
             <div className="w-full text-[#DB4444] flex items-center gap-3 font-medium">
@@ -10,7 +10,7 @@ const PageIntro = ({ children, intro, text, nav }: { children?: React.ReactNode,
                 <div className="flex items-center gap-20">
                     <h1 className="xs:text-4xl text-xl xs:tracking-normal tracking-tight font-medium">{text}</h1>
                     <div className="flex items-center justify-center gap-x-4 lg:gap-x-6">
-                        <ul className="flex gap-x-4 text-lg lg:gap-x-3 lg:mr-[620px] lg:text-3xl">
+                        {!isTime && <ul className="flex gap-x-4 text-lg lg:gap-x-3 lg:mr-[620px] lg:text-3xl">
                             <li className="flex flex-col items-center font-bold">
                                 <span className="text-xs font-medium">Days</span>
                                 03 :
@@ -27,8 +27,7 @@ const PageIntro = ({ children, intro, text, nav }: { children?: React.ReactNode,
                                 <span className="text-xs font-medium">Seconds</span>
                                 56
                             </li>
-                        </ul>
-
+                        </ul>}
                     </div>
                 </div>
                 {children}

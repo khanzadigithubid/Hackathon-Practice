@@ -4,7 +4,7 @@ import { arr } from "@/utils/productdata"
 const Pagetwo = () => {
   return (
     <div className="border-b py-12 p-3">
-      <PageIntro intro={"Today's"} text={"Flash Sales"}></PageIntro>
+      <PageIntro intro={"Today's"} text={"Flash Sales"} isTime={false}></PageIntro>
       <div className="w-full overflow-x-scroll flex md:gap-10 gap-4 py-8">
         <Card arr={arr} />
       </div>
