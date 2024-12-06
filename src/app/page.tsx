@@ -1,4 +1,3 @@
-
 import Bottombar from "@/components/homepage/bottombar";
 import Pagefive from "@/components/homepage/pagefive";
 import Pagefour from "@/components/homepage/pagefour";
