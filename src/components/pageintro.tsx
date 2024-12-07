@@ -1,4 +1,5 @@
 import Image from "next/image"
+import CountdownTimer from "./Countdown-Timer"
 const PageIntro = ({ children, intro, text, nav, isTime = true }: { children?: React.ReactNode, intro: string, text?: string, nav?: string, isTime?: boolean, }) => {
     return (
         <div className="w-full pt-12">
@@ -10,24 +11,7 @@ const PageIntro = ({ children, intro, text, nav, isTime = true }: { children?: R
                 <div className="flex flex-col mx-auto sm:mx-0 sm:flex-row items-center gap-12 lg:gap-20">
                     <h1 className="text-xl sm:text-2xl md:text-4xl xs:tracking-normal tracking-tight font-medium">{text}</h1>
                     <div className="flex items-center justify-center gap-x-4 lg:gap-x-6">
-                        {!isTime && <ul className="flex gap-x-4 text-lg lg:gap-x-3 lg:mr-[620px] lg:text-3xl">
-                            <li className="flex flex-col items-center font-bold">
-                                <span className="text-xs font-medium">Days</span>
-                                03 :
-                            </li>
-                            <li className="flex flex-col items-center font-bold">
-                                <span className="text-xs font-medium">Hours</span>
-                                23 :
-                            </li>
-                            <li className="flex flex-col items-center font-bold">
-                                <span className="text-xs font-medium">Minutes</span>
-                                19 :
-                            </li>
-                            <li className="flex flex-col items-center font-bold">
-                                <span className="text-xs font-medium">Seconds</span>
-                                56
-                            </li>
-                        </ul>}
+                        {!isTime && <CountdownTimer />}
                     </div>
                 </div>
                 {children}
